@@ -35,6 +35,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Registros de Trabajo</h5>
                     <p class="card-text">Consulta y administra los registros laborales.</p>
+                    <a href="{{ route('work_records.index') }}" class="btn btn-warning">Ver registros</a>
                 </div>
             </div>
         </div>

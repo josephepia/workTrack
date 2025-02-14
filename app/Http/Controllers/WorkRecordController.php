@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreWorkRecordRequest;
 use App\Http\Requests\UpdateWorkRecordRequest;
 use App\Models\Employee;
+use App\Models\Lot;
 use App\Models\WorkRecord;
 use App\Models\WorkType;
 
@@ -15,7 +16,7 @@ class WorkRecordController extends Controller
      */
     public function index()
     {
-        $workRecords = WorkRecord::with('employee', 'workType')->get();
+        $workRecords = WorkRecord::with('employee', 'workType')->paginate(10);
         return view('work_records.index', compact('workRecords'));
     }
 
@@ -26,7 +27,8 @@ class WorkRecordController extends Controller
     {
         $employees = Employee::all();
         $workTypes = WorkType::all();
-        return view('work_records.create', compact('employees', 'workTypes'));
+        $lots = Lot::all();
+        return view('work_records.create', compact('employees', 'workTypes', 'lots'));
     }
 
     /**
