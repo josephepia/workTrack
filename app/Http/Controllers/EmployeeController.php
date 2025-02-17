@@ -34,7 +34,8 @@ class EmployeeController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
-        Employee::create($request->all());
+        $employee = Employee::create($request->all());
+        // dd($employee);
 
         return redirect()->route('employees.index')->with('success', 'Empleado creado correctamente.');
     }
@@ -65,7 +66,7 @@ class EmployeeController extends Controller
         ]);
 
         $employee->update($request->all());
-
+        // dd($employee);
         return redirect()->route('employees.index')->with('success', 'Empleado actualizado correctamente.');
     }
 

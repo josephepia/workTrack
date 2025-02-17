@@ -64,7 +64,8 @@ class WorkRecordController extends Controller
     {
         $employees = Employee::all();
         $workTypes = WorkType::all();
-        return view('work_records.edit', compact('workRecord', 'employees', 'workTypes'));
+        $lots = Lot::all();
+        return view('work_records.edit', compact('workRecord', 'employees', 'workTypes', 'lots'));
     }
 
     /**
@@ -75,9 +76,9 @@ class WorkRecordController extends Controller
         $request->validate([
             'employee_id' => 'required|exists:employees,id',
             'work_type_id' => 'required|exists:work_types,id',
-            'tariff' => 'required|numeric',
+            'tariff' => 'required|numeric|min:0|max:2147483647',
             'date' => 'required|date',
-            'amount' => 'required|numeric',
+            'amount' => 'required|numeric|min:0|max:2147483647',
         ]);
 
         $workRecord->update($request->all());

@@ -14,8 +14,9 @@
         <div class="container mx-auto flex justify-between items-center">
             <a href="{{ route('dashboard') }}" class="text-lg font-bold">WorkTrak</a>
             <div>
-                <a href="{{ route('work_types.index') }}" class="px-3">Tipos de Trabajo</a>
+                <a href="{{ route('work_types.index') }}" class="px-3">Tipos de Labores</a>
                 <a href="{{ route('employees.index') }}" class="px-3">Empleados</a>
+                <a href="{{ route('lots.index') }}" class="px-3">Lotes</a>
                 <a href="{{ route('work_records.index') }}" class="px-3">Registros</a>
             </div>
         </div>

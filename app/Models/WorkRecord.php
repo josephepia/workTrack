@@ -10,13 +10,17 @@ class WorkRecord extends Model
     /** @use HasFactory<\Database\Factories\WorkRecordFactory> */
     use HasFactory;
 
-    protected $filable = [
+    protected $fillable = [
         'employee_id',
         'lot_id',
         'work_type_id',
         'date',
         'amount',
         'tariff',
+    ];
+
+    protected $casts = [
+        'date' => 'date',
     ];
 
     // Relación con Employee
@@ -36,4 +40,6 @@ class WorkRecord extends Model
     {
         return $this->belongsTo(WorkType::class);
     }
+
+    
 }
