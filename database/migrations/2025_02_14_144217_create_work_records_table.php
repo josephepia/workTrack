@@ -16,9 +16,9 @@ return new class extends Migration
             $table->date('date');
             $table->integer('amount');
             $table->integer('tariff');
-            $table->foreignId('employee_id')->constrained();
-            $table->foreignId('lot_id')->constrained();
-            $table->foreignId('work_type_id')->constrained();
+            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
+            $table->foreignId('lot_id')->constrained()->onDelete('cascade');;
+            $table->foreignId('work_type_id')->constrained()->onDelete('cascade');;
             $table->timestamps();
         });
     }

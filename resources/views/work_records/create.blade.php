@@ -4,7 +4,7 @@
 <div class="max-w-4xl mx-auto mt-6">
     <div class="bg-white shadow-md rounded-2xl p-6">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-            {{ isset($workRecord) ? 'Editar Registro de Trabajo' : 'Nuevo Registro de Trabajo' }}
+            {{ isset($workRecord) ? 'Editar Registro de Labores' : 'Nuevo Registro de Labores' }}
         </h2>
 
         <form method="POST" action="{{ isset($workRecord) ? route('work_records.update', $workRecord) : route('work_records.store') }}">

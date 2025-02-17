@@ -13,7 +13,7 @@ class LotController extends Controller
      */
     public function index()
     {
-        $lots = Lot::all();
+        $lots = Lot::paginate(10);
         return view('lots.index', compact('lots'));
     }
 

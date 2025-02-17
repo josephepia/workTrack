@@ -13,7 +13,7 @@ class WorkTypeController extends Controller
      */
     public function index()
     {
-        $workTypes = WorkType::all();
+        $workTypes = WorkType::paginate(10);
         return view('work_types.index', compact('workTypes'));
     }
 
